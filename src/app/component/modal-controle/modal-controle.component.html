@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-icon size="large" (click)="dismiss()" name="close-outline" slot="end"></ion-icon>
+    <ion-title>Modifier {{Qc.nomDuControle}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card-header >
+    <ion-card-title>Modification du controle {{Qc.nomDuControle}}</ion-card-title>
+  </ion-card-header>
+  <ion-list>
+    <ion-item *ngFor="let ctrl of Qc.idControles">
+      <ion-checkbox [(ngModel)]="ctrl.reponse"></ion-checkbox>&nbsp;
+      <ion-label >{{ctrl.nomControle}}</ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-item>
+    <ion-label slot="start" >Ajouter un autre controle</ion-label>
+    <ion-select [(ngModel)]="idControle" slot="start">
+      <ion-select-option *ngFor="let ctrl of controles"  value={{ctrl.idControle}}>{{ctrl.nomControle}}</ion-select-option>
+    </ion-select>
+    <ion-button slot="end" (click)="addControle()"  slot="end" color="primary">Ajouter</ion-button>
+  </ion-item>
+
+
+  <ion-button (click)="save()" expand="full">Enregister</ion-button>
+  <ion-item>
+    <ion-label>verrouiller</ion-label>
+  <ion-toggle (ionChange)="presentAlert()" [(ngModel)]="lock"></ion-toggle>
+  </ion-item>
+  
+</ion-content>
+

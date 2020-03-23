@@ -1,0 +1,45 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-back-button slot="start" text="home" slot="start">
+    </ion-back-button>
+    <ion-title>Création d'un controle</ion-title>
+     </ion-toolbar>
+     <ion-toolbar>
+
+
+      <ion-searchbar [(ngModel)]="searchBar" animated placeholder="trouver un template" (ionChange)="findTemplate()"></ion-searchbar>
+     </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+
+
+<ion-card (click)="selectTest(tmp.idTemplate,tmp.nomTemplate)" *ngFor="let tmp of templatesToDisplay"> 
+  <ion-card-header>
+    <ion-item lines="none">
+      <ion-list line="none">
+        <ion-card-subtitle > id : {{tmp.idTemplate}}</ion-card-subtitle>
+        <ion-card-title>Controle : {{tmp.nomTemplate}}</ion-card-title>
+      </ion-list>
+    
+    <ion-icon slot="end" name="arrow-forward-outline"></ion-icon>
+   
+    
+  </ion-item>
+  </ion-card-header>
+
+  <ion-card-content>
+    Ce type de controle qualité contient {{tmp.controles.length}} controles.<br/>
+    <small>
+      <ion-chip outline color="primary" *ngFor="let ctrl of tmp.controles">
+        <ion-label >{{ctrl}}</ion-label>
+      </ion-chip>&nbsp;
+
+
+    </small>
+
+  </ion-card-content>
+</ion-card>
+
+</ion-content>

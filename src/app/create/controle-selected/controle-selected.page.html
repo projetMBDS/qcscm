@@ -1,0 +1,60 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+   
+      <ion-back-button slot="start" text="crée" defaultHref="/controle-qualite">création QC</ion-back-button>
+   
+    <ion-title>Création QC {{nom}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-card *ngIf="qcControle[0].idControles.length==1">
+    <ion-card-header>
+      <ion-card-subtitle>Création QC {{nom}}</ion-card-subtitle>
+      <ion-card-title>Information obligatoire</ion-card-title>
+    </ion-card-header>
+      
+    <ion-card-content>
+      Les changement ne seront sauvegarder uniquement lors de la sauvegarde.
+      Les informations sont modifiable tant que le QC n'est pas valider.
+      <ion-item>
+        <ion-label>nom :</ion-label>
+        <ion-input [(ngModel)]="nomDuControle" placeholder="nom du controle"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>date :</ion-label>
+        <ion-input placeholder="nom du controle" value={{date}} readonly></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>heure :</ion-label>
+        <ion-input placeholder="nom du controle" value={{time}} readonly></ion-input>
+      </ion-item>
+   <br/>
+       <ion-button (click)="saveInformation()"expand="block">Enregister</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+
+  <ion-card-header *ngIf="qcControle[0].idControles.length>1">
+    <ion-card-title>Controles : {{nomDuControle}} ({{controleId}})</ion-card-title>
+    <ion-card-subtitle >crée le {{date}} par {{auteur}}</ion-card-subtitle>
+    <small>Merci de réaliser le controle qualité de type : {{nom}}</small>
+  </ion-card-header>
+  
+  
+<ion-list *ngIf="qcControle[0].idControles.length>1">
+  <ion-item *ngFor="let ctrl of qcControle[0].idControles">
+    <ion-checkbox [(ngModel)]="ctrl.reponse"></ion-checkbox>&nbsp;
+    <ion-label >{{ctrl.nomControle}}</ion-label>
+  </ion-item>
+</ion-list>
+
+<ion-item *ngIf="qcControle[0].idControles.length>1" line="none">
+  <ion-label>Verrouiller</ion-label>
+  <ion-toggle (ionChange)="presentAlert()" [(ngModel)]="lock"></ion-toggle>
+</ion-item>
+<ion-button *ngIf="qcControle[0].idControles.length>1" expand="full" (click)="validate()"expand="full">Valider</ion-button>
+
+
+</ion-content>

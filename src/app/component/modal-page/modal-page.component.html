@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-icon size="large" (click)="dismiss()" name="close-outline" slot="end"></ion-icon>
+    <ion-title>Ajouter des controles</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card-header >
+    <ion-card-title>{{controleState.length}} controles disponibles</ion-card-title>
+  </ion-card-header>
+  <ion-list>
+    <ion-item *ngFor="let ctrl of controleState">
+      <ion-label>{{ctrl.name}} <small>{{ctrl.description}}</small></ion-label>
+      <ion-checkbox slot="end" [(ngModel)]="ctrl.state"></ion-checkbox>
+    </ion-item>
+  </ion-list>
+
+
+  <ion-button  expand="full" (click)="save()">Sauvegarder</ion-button>
+</ion-content>
+

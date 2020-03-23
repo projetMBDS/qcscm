@@ -1,0 +1,50 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref=""  routerLink="/home"  routerDirection="back"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Tout les controles {{displayedQc.length}}</ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-searchbar [(ngModel)]="searchBar"  (ionChange)="findControles()" animated placeholder="trouver un controle"></ion-searchbar>
+  </ion-toolbar>
+ 
+</ion-header>
+
+<ion-content [fullscreen]="true"> 
+
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+
+  <ion-card *ngFor='let qc of displayedQc'>
+  <ion-card-header>
+        <ion-card-subtitle>crée par  {{qc.auteur}} le {{qc.date}}
+           <ion-icon (click)="presentToast()" size="large" *ngIf="qc.lock" name="lock-closed-outline" style="float:right;color:darkred;"></ion-icon>
+           <ion-icon (click)="viewUnLock(qc.idQc)" size="large" *ngIf="!qc.lock" name="lock-open-outline" style="float:right;color:darkgreen;"></ion-icon>
+          </ion-card-subtitle>
+        <ion-card-title>{{qc.nomDuControle}} </ion-card-title>
+      
+       
+   
+  </ion-card-header>
+
+  <ion-card-content>
+   resultat des {{qc.idControles.length}} controles : 
+<div *ngFor="let ctrl of qc.idControles" style="display: inline;">
+  <ion-chip color="success" *ngIf="ctrl.reponse==true" >
+    <ion-label (click)="checkControle(ctrl.id)">test {{ctrl.nomControle}} :  OK
+    </ion-label>
+  </ion-chip>&nbsp; 
+  <ion-chip color="danger" *ngIf="ctrl.reponse==false" >
+    <ion-label (click)="checkControle(ctrl.id)">test {{ctrl.nomControle}} : KO
+    </ion-label>
+  </ion-chip>&nbsp; 
+</div>
+   
+  
+  </ion-card-content>
+</ion-card>
+
+</ion-content>

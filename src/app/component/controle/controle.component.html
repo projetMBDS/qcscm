@@ -1,0 +1,15 @@
+<ion-list>
+ <!-- Sliding item with expandable options on both sides -->
+ <ion-item-sliding #slidingItem>
+  <ion-item-options side="start">
+    <ion-item-option (click)="deleteControle($event,id,slidingItem)"color="danger" expandable>
+      Delete
+    </ion-item-option>
+  </ion-item-options>
+
+  <ion-item>
+    <ion-label>{{id}} - {{name}} <small>{{description}}</small></ion-label>
+   
+  </ion-item>
+</ion-item-sliding>
+</ion-list>

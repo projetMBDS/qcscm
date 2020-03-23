@@ -1,5 +1,7 @@
 {
   "name": "QCSCM",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
