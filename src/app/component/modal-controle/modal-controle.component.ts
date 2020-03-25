@@ -13,38 +13,38 @@ export class ModalControleComponent implements OnInit {
   lock:boolean
   idControle:string;
   Qc={
-    idQc:"0",
-    idTemplate:"0",
-    nomDuControle:"",
+    idQc:'0',
+    idTemplate:'0',
+    nomDuControle:'',
     idControles:[{
-      id:"",
-      nomControle:"",
+      id:'',
+      nomControle:'',
       reponse:false
     }],
-    auteur:"",
-    date:"",
-    time:"",
+    auteur:'',
+    date:'',
+    time:'',
   lock:false}
 
     allQc = [{
-      idQc:"0",
-      idTemplate:"0",
-      nomDuControle:"",
+      idQc:'0',
+      idTemplate:'0',
+      nomDuControle:'',
       idControles:[{
-        id:"",
-        nomControle:"",
+        id:'',
+        nomControle:'',
         reponse:false
       }],
-      auteur:"",
-      date:"",
-      time:"",
+      auteur:'',
+      date:'',
+      time:'',
       lock:false}
     ]
 
     controles = [
       {
-      idControle:"1",
-      nomControle:"none",
+      idControle:'1',
+      nomControle:'none',
       description:'none'
     }
     ];
@@ -90,17 +90,17 @@ export class ModalControleComponent implements OnInit {
 
     save(){
       let tmp= [{
-        idQc:"0",
-        idTemplate:"0",
-        nomDuControle:"",
+        idQc:'0',
+        idTemplate:'0',
+        nomDuControle:'',
         idControles:[{
-          id:"",
-          nomControle:"",
+          id:'',
+          nomControle:'',
           reponse:false
         }],
-        auteur:"",
-        date:"",
-        time:"",
+        auteur:'',
+        date:'',
+        time:'',
       lock:false
     }]
 
@@ -148,7 +148,7 @@ export class ModalControleComponent implements OnInit {
     }
 
     addControle(){
-      console.log("add controle "+ this.idControle);
+      console.log('add controle '+ this.idControle);
 
       this.controles.forEach(element => {
         if(element.idControle==this.idControle){
@@ -159,7 +159,7 @@ export class ModalControleComponent implements OnInit {
         }
       });
 
-      this.idControle=""
+      this.idControle=''
 
 
 

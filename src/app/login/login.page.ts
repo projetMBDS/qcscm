@@ -17,12 +17,12 @@ export class LoginPage implements OnInit {
   users = [
     {
       id:'axel.verrons@gmail.com',
-      password:"pass",
-      name:"axel verrons"
+      password:'pass',
+      name:'axel verrons'
     },
     {
-      id:"anis.djadour@allemande.com",
-      password:"pass",
+      id:'anis.djadour@allemande.com',
+      password:'pass',
       name:'Anis Djadour'
     }
   ]
@@ -45,11 +45,11 @@ export class LoginPage implements OnInit {
 
 
   login(){
-    console.log("Connexion started");
+    console.log('Connexion started');
     this.storage.set('force.login',this.stayConnected);
     this.users.forEach(element => {
       if (element.id==this.id && element.password == this.password){
-        console.log("Connexion autorized");
+        console.log('Connexion autorized');
         //SAVE INTO DATA BASE 
         this.storage.set('user.name', element.name);
         this.storage.set('user.id', element.id);

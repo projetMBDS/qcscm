@@ -11,16 +11,16 @@ export class ControleQualitePage implements OnInit {
 
   templates = [
     {
-      idTemplate:"1",
-      nomTemplate:"",
+      idTemplate:'1',
+      nomTemplate:'',
       controles:[]
     }
   ];
   templatesToDisplay =[]
   controles=[{
-    idControle:"0",
-    nomControle:"none",
-    description:"null"
+    idControle:'0',
+    nomControle:'none',
+    description:'null'
   }
 ];
   nomTemplate:string;
@@ -45,11 +45,11 @@ export class ControleQualitePage implements OnInit {
 
 
       this.templates.forEach(element => {
-        console.log("element is " + element.nomTemplate)
+        console.log('element is ' + element.nomTemplate)
         element.controles.forEach(ctrl => {
           this.controles.forEach(exctrl => {
             if(exctrl.idControle==ctrl){
-              console.log(ctrl + " : " + exctrl.nomControle);
+              console.log(ctrl + ' : ' + exctrl.nomControle);
               let index= element.controles.indexOf(ctrl)
               if (index !== -1) {
                 element.controles[index] =exctrl.nomControle;
@@ -97,7 +97,7 @@ export class ControleQualitePage implements OnInit {
       this.templates.forEach(element => {
         
         if(element.nomTemplate.toLowerCase().includes(this.searchBar.toLowerCase())){
-          console.log(element.nomTemplate+ " contains " + this.searchBar)
+          console.log(element.nomTemplate+ ' contains ' + this.searchBar)
           this.templatesToDisplay.push(element);
         }
       });

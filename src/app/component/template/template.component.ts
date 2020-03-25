@@ -22,8 +22,8 @@ export class TemplateComponent implements OnInit {
   ngOnInit() {}
 
   AddControle(slidingItem){
-   console.log("add stuff ? ")
-   this.idToModify.emit("test");
+   console.log('add stuff ? ')
+   this.idToModify.emit('test');
    slidingItem.close();
   }
 

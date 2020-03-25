@@ -21,67 +21,67 @@ export class ControleSelectedPage implements OnInit {
   time = formatDate(new Date(), 'hh:mm:ss', 'en');
   templates = [
     {
-      idTemplate:"1",
-      nomTemplate:"",
+      idTemplate:'1',
+      nomTemplate:'',
       controles:[]
     }
   ];
 
   controles=[{
-    idControle:"0",
-    nomControle:"none",
-    description:"null"
+    idControle:'0',
+    nomControle:'none',
+    description:'null'
   }
 ];
 
 controlesToDisplay=[{
-  idControle:"0",
-  nomControle:"none",
-  description:"null"
+  idControle:'0',
+  nomControle:'none',
+  description:'null'
 }
 ];
 
 
 newQc=[{
-  idQc:"0",
-  idTemplate:"0",
-  nomDuControle:"",
+  idQc:'0',
+  idTemplate:'0',
+  nomDuControle:'',
   idControles:[{
-    id:"",
-    nomControle:"",
+    id:'',
+    nomControle:'',
     reponse:false
   }],
-  auteur:"",
-  date:"",
-  time:"",
+  auteur:'',
+  date:'',
+  time:'',
   lock:false
 }]
 
-qcControle=[{idQc:"0",
-idTemplate:"0",
-nomDuControle:"",
+qcControle=[{idQc:'0',
+idTemplate:'0',
+nomDuControle:'',
 idControles:[{
-  id:"",
-  nomControle:"",
+  id:'',
+  nomControle:'',
   reponse:false
 }],
-auteur:"",
-date:"",
-time:"",
+auteur:'',
+date:'',
+time:'',
 lock:false}]
 
 allQc=[{
-idQc:"0",
-idTemplate:"0",
-nomDuControle:"",
+idQc:'0',
+idTemplate:'0',
+nomDuControle:'',
 idControles:[{
-  id:"",
-  nomControle:"",
+  id:'',
+  nomControle:'',
   reponse:false
 }],
-auteur:"",
-date:"",
-time:"",
+auteur:'',
+date:'',
+time:'',
 lock:false}]
 
 
@@ -159,25 +159,25 @@ lock:false}]
     let tmpId:string
     /*
 newQc=[{
-  idQc:"0",
-  idTemplate:"0",
-  nomDuControle:"",
+  idQc:'0',
+  idTemplate:'0',
+  nomDuControle:'',
   idControles:{
-    id:"",
+    id:'',
     reponse:false
   },
-  auteur:"",
-  date:"",
-  time:""
+  auteur:'',
+  date:'',
+  time:''
 }]*/
 
-console.log("nom controle : "+ this.nomDuControle)
+console.log('nom controle : '+ this.nomDuControle)
 if (this.allQc==null){
-  console.log("id : " +1)
-  tmpId="1"
+  console.log('id : ' +1)
+  tmpId='1'
 }
 else {
-  console.log("id : " + this.allQc.length +1)
+  console.log('id : ' + this.allQc.length +1)
   tmpId = (this.allQc.length +1).toString();
 }
 
@@ -185,12 +185,12 @@ this.controleId = tmpId;
 
 this.newQc=[];
 console.log(this.controlesToDisplay);
-let tmpControle=[{id:"",
-nomControle:"",
+let tmpControle=[{id:'',
+nomControle:'',
 reponse:false}]
 
 this.controlesToDisplay.forEach(element => {
-  console.log(element.idControle+":"+element.nomControle)
+  console.log(element.idControle+':'+element.nomControle)
   tmpControle.push({id:element.idControle,nomControle:element.nomControle,reponse:false})
 });
 

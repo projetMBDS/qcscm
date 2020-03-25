@@ -24,7 +24,7 @@ export class HomePage {
   }
 
   createQc(){
-    console.log("createQC")
+    console.log('createQC')
     this.router.navigate(['/controle-qualite']);
   }
 

@@ -10,18 +10,18 @@ import { Storage } from '@ionic/storage';
 export class ControleQualitePage implements OnInit {
   controles = [
     {
-    idControle:"1",
-    nomControle:"none",
+    idControle:'1',
+    nomControle:'none',
     description:'none'
   }
   /*{
-    idControle:"2",
-    nomControle:"controles des boutons",
-    description:""description
+    idControle:'2',
+    nomControle:'controles des boutons',
+    description:''description
   },
   {
-    idControle:"3",
-    nomControle:"controles des tailles"
+    idControle:'3',
+    nomControle:'controles des tailles'
   }*/
   ];
 
@@ -70,8 +70,8 @@ addControle(){
   }
   
   this.controles.push({idControle:id,nomControle:this.nomControle,description:this.description});
-  this.nomControle=""; //empty the inputbox
-  this.description="" //empty inpu
+  this.nomControle=''; //empty the inputbox
+  this.description='' //empty inpu
   this.storage.set('controles', this.controles);
   console.log(this.controles);
 

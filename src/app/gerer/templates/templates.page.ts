@@ -13,8 +13,8 @@ import { ModalPageComponent} from '../../component/modal-page/modal-page.compone
 export class TemplatesPage implements OnInit {
   templates = [
     {
-      idTemplate:"1",
-      nomTemplate:"",
+      idTemplate:'1',
+      nomTemplate:'',
       controles:[]
     }
   ];
@@ -58,20 +58,20 @@ export class TemplatesPage implements OnInit {
   }
   
   test($event){
-    console.log("emit recived from child : "+ $event);
+    console.log('emit recived from child : '+ $event);
     this.presentModal($event)
   }
 
   delete($event){
     let tmp=[]
-    console.log("delete the id: "+ $event);
+    console.log('delete the id: '+ $event);
     this.templates.forEach(element => {
       if (element.idTemplate!=$event){
         tmp.push({idTemplate:element.idTemplate,nomTemplate:element.nomTemplate,controles:element.controles});
      }
     });
 
-    console.log("test : "+ tmp);
+    console.log('test : '+ tmp);
 
     this.templates=tmp;
 
@@ -88,7 +88,7 @@ export class TemplatesPage implements OnInit {
     }
     
     this.templates.push({idTemplate:id,nomTemplate:this.nomTemplate,controles:[]});
-    this.nomTemplate=""; //empty the inputbox 
+    this.nomTemplate=''; //empty the inputbox 
     
     this.storage.set('templates', this.templates);
     console.log(this.templates);

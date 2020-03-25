@@ -13,36 +13,36 @@ export class DisplayQcPage implements OnInit {
 
   searchBar:string;
   allQc=[{
-    idQc:"0",
-    idTemplate:"0",
-    nomDuControle:"",
+    idQc:'0',
+    idTemplate:'0',
+    nomDuControle:'',
     idControles:[{
-      id:"",
-      nomControle:"",
+      id:'',
+      nomControle:'',
       reponse:false
     }],
-    auteur:"",
-    date:"",
-    time:""}]
+    auteur:'',
+    date:'',
+    time:''}]
 
     displayedQc=[{
-      idQc:"0",
-      idTemplate:"0",
-      nomDuControle:"",
+      idQc:'0',
+      idTemplate:'0',
+      nomDuControle:'',
       idControles:[{
-        id:"",
-        nomControle:"",
+        id:'',
+        nomControle:'',
         reponse:false
       }],
-      auteur:"",
-      date:"",
-      time:""}]
+      auteur:'',
+      date:'',
+      time:''}]
 
 
       controles=[{
-        idControle:"0",
-        nomControle:"none",
-        description:"null"
+        idControle:'0',
+        nomControle:'none',
+        description:'null'
       }
     ];
 
@@ -81,7 +81,7 @@ export class DisplayQcPage implements OnInit {
       this.allQc.forEach(element => {
         
         if(element.nomDuControle.toLowerCase().includes(this.searchBar.toLowerCase())){
-          console.log(element.nomDuControle+ " contains " + this.searchBar)
+          console.log(element.nomDuControle+ ' contains ' + this.searchBar)
           this.displayedQc.push(element);
         }
       });
@@ -90,7 +90,7 @@ export class DisplayQcPage implements OnInit {
 
   doRefresh(event) {
     console.log('Begin async operation');
-    this.searchBar="";
+    this.searchBar='';
     this.loadData();
 
     setTimeout(() => {
@@ -116,7 +116,7 @@ export class DisplayQcPage implements OnInit {
   }
 
   async checkControle(id){
-    console.log("id to search is" + id);
+    console.log('id to search is' + id);
     let msg:string
     let title:string
     this.controles.forEach(element => {
