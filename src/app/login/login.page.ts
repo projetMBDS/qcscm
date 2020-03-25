@@ -16,14 +16,14 @@ export class LoginPage implements OnInit {
   // todo : user webservice to get the user / or only use sql request specific
   users = [
     {
-      id:"axel.verrons@gmail.com",
+      id:'axel.verrons@gmail.com',
       password:"pass",
       name:"axel verrons"
     },
     {
       id:"anis.djadour@allemande.com",
       password:"pass",
-      name:"Anis Djadour"
+      name:'Anis Djadour'
     }
   ]
 
