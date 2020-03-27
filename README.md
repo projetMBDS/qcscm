@@ -8,6 +8,15 @@ Assuming the customer is demanding more in terms of traceability and reliability
 Belharra’s customers implement quality controls throughout the production process. The acquisition and traceability of these controls is essential.
 This report deals with the design and development of a mobile application to collect data linked
 
+Generated with Ionic CLI 6.3.0
+
+System:
+
+   NodeJS : v13.8.0
+   npm    : 6.13.6
+   OS     : macOS Catalina
+
+More information : https://github.com/axelverrons/
 
 
 
