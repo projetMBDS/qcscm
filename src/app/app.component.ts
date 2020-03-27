@@ -20,6 +20,9 @@ export class AppComponent {
 
   initializeApp() {
     this.platform.ready().then(() => {
+      setTimeout(() => {
+        console.log(' operation has ended');
+      }, 2000);
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
